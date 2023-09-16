@@ -6,7 +6,7 @@ import datetime as t
 # Define time
 now = t.datetime.today()
 
-# Define the ticker symbol for crude oil (WTI)
+# Define the ticker symbol for wheat futures market
 ticker_symbol = ['ZW=F','KE=F']
 
 # Define the date range for historical data
@@ -17,6 +17,7 @@ end_date = now.strftime("%G-%m-%d")
 konversion = 27.2155
 #official exchange rate
 middle_exchange_rate = 109.9703
+
 # Fetch historical data using yfinance
 wheat_data = yf.download(ticker_symbol, start=start_date, end=end_date)*middle_exchange_rate/100
 wheat_data_kg = yf.download(ticker_symbol, start=start_date, end=end_date)/konversion*middle_exchange_rate/100
